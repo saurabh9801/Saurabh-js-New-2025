@@ -44,7 +44,25 @@ JsUser.greeting = function(){
 
 // how to take the refernce of the object in function
 JsUser.greetingTwo = function(){
-    console.log(`Hello Js user, ${this.name}`);//here this take the refrence of the object and what are the property in the Jsuser object
+    // console.log(`Hello Js user, ${this.name}`);//here this take the refrence of the object and what are the property in the Jsuser object
     
 }
-console.log(JsUser.greetingTwo())
+// console.log(JsUser.greetingTwo())
+
+
+//de-structuring of the object
+const course ={
+    price : 999,
+    cousreIntructuor :"saurabh"
+}
+// course.cousreIntructuor
+const{cousreIntructuor: instructor } = course
+// console.log(instructor);
+
+// JSON Format key and value shoude be in string
+
+{
+    "name" :"saurabh",
+    "age":35,
+    "price":"free"
+}
