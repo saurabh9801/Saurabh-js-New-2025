@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua; text-align: center;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+
+
+    <script>
+        const parentItem = document.querySelector('.parent')
+        console.log(parentItem);
+        console.log(parentItem.children)// here we will get HTMLcollection it almost array like property
+        // console.log(parentItem.children[1]) 
+        console.log(parentItem.children[1].innerHTML); // out:tuesday
+
+
+        // by this we will get all the value
+        // for (let i = 0; i < parentItem.children.length; i++) {
+        //    console.log(parentItem.children[i].innerHTML)            
+        // }
+        
+
+        // another property
+        // console.log(parentItem.firstElementChild)   by this we will get the first element of the parent class
+        // console.log(parentItem.lastElementChild)
+
+
+        const dayOne = document.querySelector('.day')
+        // console.log(dayOne)
+
+        // if i want to check the value with child element to parent element check the below code
+        // console.log(dayOne.parentElement) // it will give the parent element of the item
+
+
+        //nextsiblingProperty
+        // console.log(dayOne.nextElementSibling) // it will give the nextsibling item    
+
+        
+
+        console.log("Nodes",parentItem.childNodes) // here it will show all the nodes with spaces and enter value also
+    </script>
+</body>
+</html>

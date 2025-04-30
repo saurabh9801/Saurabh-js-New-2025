@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="title">DOM :Document Object Model <span style="display: none;">Hi Saurabh</span></h1> 
+   <p>Hi This is saurabh kumar</p>
+   <h2>My Name is saurabh kumar</h2>
+   <h2>I am a software Engineer</h2>
+   <h2>I have completed my MCA degree</h2>
+   <input type="password" name="pwd" id="">
+
+   <ul>
+    <li class="list-item">one</li>
+    <li class="list-item">Two</li>
+    <li class="list-item">Three</li>
+    <li class="list-item"></li>
+   </ul>
+
+   <!-- what is the difference between innerText and innerContent -->
+    <!-- In innerText it will show the H1 value not the whole content it will not show the display none part but in
+    innerContent it will show both h1 and span value  -->
+
+   <script>
+        const title = document.getElementById('title')
+        title.style.backgroundColor = "green"
+        title.style.padding = "20px"
+        console.log(title.innerText)
+        console.log(title.textContent)
+        console.log(title.innerHTML) // it will show the DOM :Document Object Model and <span style="display: none;">Hi Saurabh</span>
+        document.querySelector('h2')// it will give first h2 value, if we will use id use (#) and for class use dot(.)
+        document.querySelector('input[type="password"]')// how to select input type
+        document.querySelector('h2:first-child');// it will select the first child value of h2
+        const myUnorderList = document.querySelector('ul')
+        console.log(myUnorderList)
+        const tempLiList = document.querySelectorAll('h2')// it will give all the h2 value , nodelist and check the prototype , by the prototype it will what properties we can perform on this 
+        // tempLiList.style.color = "green" here we will get error bcz on the nodelsit we can add like this bcz it have more than one value so for this we will have to add indexing
+        tempLiList[0].style.color = "green"
+
+        // Note: whenever we will use querySelectorAll first the check the properties  
+        // if it is Nodelist inside NodeList check what all properties are accepting there we will see forEach properties
+        // to reslove the indexing issue we will use forEach
+
+        tempLiList.forEach(function(item){
+            item.style.backgroundColor = "lightpink"
+        })
+
+
+
+        const newTampList = document.getElementsByClassName('list-item')
+        console.log(newTampList)
+        // newTampList.forEach(function(newItem){
+        // // console.log(newItem) here we will get again  but it is a node List    to solve this error we will have to convert nodeList into Array 
+        // })
+
+        // how to convert nodeList into Array
+        const convertedNodeList = Array.from(tempLiList) // Array.form we will convert the  node list into array, now open the prototype
+        convertedNodeList.forEach(function(item){
+            // console.log(item)
+            item.style.color = "orange"
+        })// whereever get the nodelist use ForEach method or convert the nodeList into Array so that we can use the Array Method
+   </script>
+</body>
+</html>
